@@ -10,39 +10,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NapTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="NapTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="130-OA-Gxj">
-                                <rect key="frame" x="153" y="576" width="69" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34m-7q-bPw">
-                                <rect key="frame" x="107.5" y="297.5" width="160" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34m-7q-bPw">
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="569"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="569" id="lqn-SL-eoy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="130-OA-Gxj">
+                                <rect key="frame" x="1" y="577" width="375" height="90"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="1" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="wdn-SM-IaN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <state key="normal" title="Start Timer">
+                                    <color key="titleColor" red="0.3090498096446701" green="0.3090498096446701" blue="0.3090498096446701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XC0-Qu-SgB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="34m-7q-bPw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rkv-RJ-uZF"/>
-                            <constraint firstItem="34m-7q-bPw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="S4W-Ft-Wcv"/>
-                            <constraint firstItem="130-OA-Gxj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="ayk-19-Vy5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="130-OA-Gxj" secondAttribute="trailing" constant="153" id="dmT-ad-PwZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="130-OA-Gxj" secondAttribute="bottom" constant="50" id="peP-9I-pMc"/>
+                            <constraint firstItem="34m-7q-bPw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0id-oP-4Pa"/>
+                            <constraint firstItem="34m-7q-bPw" firstAttribute="centerX" secondItem="130-OA-Gxj" secondAttribute="centerX" id="0lS-7O-r0c"/>
+                            <constraint firstItem="34m-7q-bPw" firstAttribute="leading" secondItem="130-OA-Gxj" secondAttribute="leading" constant="-1" id="Feh-xn-KLD"/>
+                            <constraint firstItem="34m-7q-bPw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OOe-v6-PwQ"/>
+                            <constraint firstItem="34m-7q-bPw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WNm-Rw-ApT"/>
+                            <constraint firstItem="130-OA-Gxj" firstAttribute="top" secondItem="34m-7q-bPw" secondAttribute="bottom" constant="8" id="pgk-uu-qmb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="34m-7q-bPw" id="Fgv-Uo-oMr"/>
+                        <outlet property="timerButton" destination="130-OA-Gxj" id="wck-Gk-Mmu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>
